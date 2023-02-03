@@ -23,14 +23,34 @@ year = int(input("Введите год: "))
 
 
 if(year%4 == 0):
-   days = arr.array("i",[31,29,31,30,31,30,31,31,30,31,30,31])
-   itog = 0
-   i = 0
-   method = Calculate()
-   while (i<12):
-    arrayargument = days[i]
-    itog = itog + method.count(arrayargument)
-    i = i +1
+    if (year < 2000):
+        if(year%100 == 0 and year%400 == 0):
+            days = arr.array("i",[31,29,31,30,31,30,31,31,30,31,30,31])
+            itog = 0
+            i = 0
+            method = Calculate()
+            while (i<12):
+                arrayargument = days[i]
+                itog = itog + method.count(arrayargument)
+                i = i +1            
+        else:
+            days = arr.array("i",[31,28,31,30,31,30,31,31,30,31,30,31])
+            itog = 0
+            i = 0
+            method = Calculate()
+            while (i<12):
+                arrayargument = days[i]
+                itog = itog + method.count(arrayargument)
+                i = i +1
+    else:
+        days = arr.array("i",[31,29,31,30,31,30,31,31,30,31,30,31])
+        itog = 0
+        i = 0
+        method = Calculate()
+        while (i<12):
+            arrayargument = days[i]
+            itog = itog + method.count(arrayargument)
+            i = i +1 
 else:
     days = arr.array("i",[31,28,31,30,31,30,31,31,30,31,30,31])
     itog = 0
